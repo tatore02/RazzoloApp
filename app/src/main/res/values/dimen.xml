@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="boxWidth">80dp</dimen>
+    <dimen name="boxHeight">80dp</dimen>
+    <dimen name="boxMargin">5dp</dimen>
+    <dimen name="boxPadding">0dp</dimen>
+
+    <dimen name="boxTextSize">32sp</dimen>
+</resources>
