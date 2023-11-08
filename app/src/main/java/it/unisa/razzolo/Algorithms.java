@@ -16,12 +16,12 @@ public class Algorithms {
 
         while(!queue.isEmpty()){
             final Point point = queue.poll();
-            int currentIndex = point.getIndex();
+            int currentIndex = point.index();
             if(currentIndex == word.length()-1)
                 return true;
 
-            int x = point.getI();
-            int y = point.getJ();
+            int x = point.i();
+            int y = point.j();
             // check adjacent cells
             for(int k=0; k<8; k++){
                 int deltaX = x + dX[k];
