@@ -3,18 +3,28 @@ package it.unisa.razzolo;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.annotation.SuppressLint;
+import android.os.Handler;
+import android.os.Looper;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.Toast;
 
-import java.util.Arrays;
+import java.util.Set;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
+import it.unisa.razzolo.model.Word;
 
 public class MainActivity extends AppCompatActivity {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        listView = findViewById(R.id.listView);
+        wordAdapter = new WordAdapter(this, R.layout.activity_listview, R.id.listView);
+        listView.setAdapter(wordAdapter);
 
         for (int i=1; i<=16; i++) {
             @SuppressLint("DiscouragedApi")
@@ -48,10 +58,22 @@ public class MainActivity extends AppCompatActivity {
                 return;
             }
         }
-
-        Toast.makeText(this, Arrays.deepToString(matrix), Toast.LENGTH_LONG).show();
+        ExecutorService executor = Executors.newSingleThreadExecutor();
+        Handler handler = new Handler(Looper.getMainLooper());
+        executor.execute(() -> {
+            final var background = new Background(matrix);
+            background.run();
+            handler.post(() -> {
+                wordAdapter.clear();
+                Set<String> foundWords = background.getFoundWords();
+                for(String s : foundWords)
+                    wordAdapter.add(new Word(s,s.length()));
+            });
+        });
     }
 
     private final char[][] matrix = new char[4][4];
     private final EditText[] boxes = new EditText[16];
+    private ListView listView;
+    private WordAdapter wordAdapter;
 }

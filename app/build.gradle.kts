@@ -8,7 +8,7 @@ android {
 
     defaultConfig {
         applicationId = "it.unisa.razzolo"
-        minSdk = 27
+        minSdk = 33
         targetSdk = 33
         versionCode = 1
         versionName = "1.0"

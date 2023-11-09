@@ -9,6 +9,7 @@
     tools:context=".MainActivity">
 
     <androidx.gridlayout.widget.GridLayout
+        android:id="@+id/gridLayout"
         android:layout_width="359dp"
         android:layout_height="357dp"
         android:layout_marginStart="24dp"
@@ -17,6 +18,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <EditText
+            android:text="A"
             android:id="@+id/box1"
             android:layout_width="@dimen/boxWidth"
             android:layout_height="@dimen/boxHeight"
@@ -34,6 +36,7 @@
             app:layout_row="0" />
 
         <EditText
+            android:text="B"
             android:id="@+id/box2"
             android:layout_width="@dimen/boxWidth"
             android:layout_height="@dimen/boxHeight"
@@ -51,6 +54,7 @@
             app:layout_row="0" />
 
         <EditText
+            android:text="C"
             android:id="@+id/box3"
             android:layout_width="@dimen/boxWidth"
             android:layout_height="@dimen/boxHeight"
@@ -68,6 +72,7 @@
             app:layout_row="0" />
 
         <EditText
+            android:text="D"
             android:id="@+id/box4"
             android:layout_width="@dimen/boxWidth"
             android:layout_height="@dimen/boxHeight"
@@ -85,6 +90,7 @@
             app:layout_row="0" />
 
         <EditText
+            android:text="E"
             android:id="@+id/box5"
             android:layout_width="@dimen/boxWidth"
             android:layout_height="@dimen/boxHeight"
@@ -102,6 +108,7 @@
             app:layout_row="1" />
 
         <EditText
+            android:text="F"
             android:id="@+id/box6"
             android:layout_width="@dimen/boxWidth"
             android:layout_height="@dimen/boxHeight"
@@ -119,6 +126,7 @@
             app:layout_row="1" />
 
         <EditText
+            android:text="G"
             android:id="@+id/box7"
             android:layout_width="@dimen/boxWidth"
             android:layout_height="@dimen/boxHeight"
@@ -136,6 +144,7 @@
             app:layout_row="1" />
 
         <EditText
+            android:text="H"
             android:id="@+id/box8"
             android:layout_width="@dimen/boxWidth"
             android:layout_height="@dimen/boxHeight"
@@ -153,6 +162,7 @@
             app:layout_row="1" />
 
         <EditText
+            android:text="I"
             android:id="@+id/box9"
             android:layout_width="@dimen/boxWidth"
             android:layout_height="@dimen/boxHeight"
@@ -170,6 +180,7 @@
             app:layout_row="2" />
 
         <EditText
+            android:text="L"
             android:id="@+id/box10"
             android:layout_width="@dimen/boxWidth"
             android:layout_height="@dimen/boxHeight"
@@ -187,6 +198,7 @@
             app:layout_row="2" />
 
         <EditText
+            android:text="M"
             android:id="@+id/box11"
             android:layout_width="@dimen/boxWidth"
             android:layout_height="@dimen/boxHeight"
@@ -204,6 +216,7 @@
             app:layout_row="2" />
 
         <EditText
+            android:text="N"
             android:id="@+id/box12"
             android:layout_width="@dimen/boxWidth"
             android:layout_height="@dimen/boxHeight"
@@ -221,6 +234,7 @@
             app:layout_row="2" />
 
         <EditText
+            android:text="O"
             android:id="@+id/box13"
             android:layout_width="@dimen/boxWidth"
             android:layout_height="@dimen/boxHeight"
@@ -238,6 +252,7 @@
             app:layout_row="3" />
 
         <EditText
+            android:text="P"
             android:id="@+id/box14"
             android:layout_width="@dimen/boxWidth"
             android:layout_height="@dimen/boxHeight"
@@ -264,6 +279,7 @@
             android:inputType="textCapSentences"
             android:maxLength="1"
             android:padding="@dimen/boxPadding"
+            android:text="Q"
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="@dimen/boxTextSize"
@@ -272,6 +288,7 @@
             app:layout_row="3" />
 
         <EditText
+            android:text="R"
             android:id="@+id/box16"
             android:layout_width="@dimen/boxWidth"
             android:layout_height="@dimen/boxHeight"
@@ -303,5 +320,15 @@
         android:textSize="32sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <ListView
+        android:id="@+id/listView"
+        android:background="#CCCC"
+        android:layout_width="380dp"
+        android:layout_height="250dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gridLayout" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
