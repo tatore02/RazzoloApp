@@ -16,6 +16,7 @@ public class Algorithms {
 
         while(!queue.isEmpty()){
             final Point point = queue.poll();
+            assert point != null;
             int currentIndex = point.index();
             if(currentIndex == word.length()-1)
                 return true;
@@ -35,9 +36,9 @@ public class Algorithms {
         return false;
     }
 
-    private static boolean checkCells(boolean[][] isValid, int i, int j){
+    private static boolean checkCells(boolean[][] isVisited, int i, int j){
         if((i>=0 && i<4) && (j>=0 && j<4))
-            return isValid[i][j];
+            return !isVisited[i][j];
         return false;
     }
 
